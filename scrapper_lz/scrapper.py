@@ -19,9 +19,7 @@ def write_to_log(function_name):
     print(f"Выполнено: {function_name} в {current_time}")
 
 with open('execution_log.txt', 'w', encoding='utf-8') as f:
-    f.write(f"=== Лог выполнения функций ===\n")
     f.write(f"Начало работы: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-    f.write("=" * 50 + "\n\n")
 
 driver = webdriver.Chrome()
 driver.get("https://www.linkedin.com/")
@@ -78,6 +76,6 @@ df.to_csv('data.csv')
 write_to_log("save_to_csv")
 
 with open('execution_log.txt', 'a', encoding='utf-8') as f:
-    f.write(f"\nВсе операции завершены: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    f.write(f"Все операции завершены: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
 driver.quit()
